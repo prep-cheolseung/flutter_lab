@@ -1,0 +1,169 @@
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Test'),
+        ),
+        body: TestScreen(),
+      ),
+    );
+  }
+}
+
+class TestScreen extends StatefulWidget {
+  @override
+  TextState createState() => TextState();
+}
+
+class TextState extends State<TestScreen> {
+  DateTime dateValue = DateTime.now();
+  TimeOfDay timeValue = TimeOfDay.now();
+
+  _dialog() {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Dialog Title'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextField(
+                decoration: InputDecoration(border:  OutlineInputBorder()),
+              ),
+              Row(
+                children: [
+                  Checkbox(
+                    value: true,
+                    onChanged: (value) {}
+                  ),
+                  Text('Consent to receipt')
+                ],
+              )
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text("OK"),
+            ),
+          ],
+        );
+      }
+    );
+  }
+
+  _bottomSheet() {
+    showBottomSheet(
+      context: context,
+      backgroundColor: Colors.yellow,
+      builder: (context) {
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ListTile(
+              leading: Icon(Icons.add),
+              title: Text('Add'),
+              onTap: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.remove),
+              title: Text('Remove'),
+              onTap: () {
+                Navigator.of(context).pop();
+              },
+            )
+          ],
+        );
+      }
+    );
+  }
+
+  _modalBottomSheet() {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.yellow,
+      builder: (context) {
+        return SafeArea(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ListTile(
+              leading: Icon(Icons.add),
+              title: Text('Add'),
+              onTap: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.remove),
+              title: Text('Remove'),
+              onTap: () {
+                Navigator.of(context).pop();
+              },
+            )
+            ],
+          ),
+        );
+      }
+    );
+  }
+
+  Future datePicker() async {
+    DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: new DateTime.now(),
+      firstDate: new DateTime(2026),
+      lastDate: new DateTime(2030)
+    );
+
+    if (picked != null) {
+      setState(() => dateValue = picked);
+    }
+  }
+
+  Future timePicker() async {
+    TimeOfDay? selectedTime = await showTimePicker(
+      context: context,
+      initialTime: TimeOfDay.now()
+    );
+
+    if (selectedTime != null) {
+      setState(() => timeValue = selectedTime);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ElevatedButton(onPressed: _dialog, child: Text('Dialog')),
+          ElevatedButton(onPressed: _bottomSheet, child: Text('Bottom Sheet')),
+          ElevatedButton(onPressed: _modalBottomSheet, child: Text('Modal Bottom Sheet')),
+          ElevatedButton(onPressed: datePicker, child: Text('Date Picker')),
+          Text('Date : ${DateFormat('yyyy-MM-DD').format(dateValue)}'),
+          ElevatedButton(onPressed: timePicker, child: Text('Time Picker')),
+          Text('Time : ${timeValue.hour}:${timeValue.minute}'),
+        ],
+      ),
+    );
+  }
+}
