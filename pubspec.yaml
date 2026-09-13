@@ -37,6 +37,7 @@ dependencies:
 
   english_words: ^4.0.0
   font_awesome_flutter: ^11.0.0
+  http: ^1.6.0
   intl: ^0.20.3
   json_annotation: ^4.12.0
 
