@@ -73,9 +73,11 @@ void main() {
   //   () => runApp(MyApp()),
   //   blocObserver: MyBlocObserver(),
   // );
-  BlocOverrides.runZoned(() {
-    runApp(MyApp());
-  }, blocObserver: MyBlocObserver());
+  // BlocOverrides.runZoned(() {
+  //   runApp(MyApp());
+  // }, blocObserver: MyBlocObserver());
+  Bloc.observer = MyBlocObserver();
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -125,7 +127,7 @@ class MyWidget extends StatelessWidget {
         BlocListener<UserBloc, User?>(listener: (context, user) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text('{$user!.name}'),
+              content: Text('${user!.name}'),
               backgroundColor: Colors.blue,
             ),
           );
