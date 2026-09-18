@@ -1,7 +1,33 @@
 import Flutter
 import UIKit
 
-@main
+//@main
+//@objc class AppDelegate: FlutterAppDelegate {
+//  override func application(
+//    _ application: UIApplication,
+//    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+//  ) -> Bool {
+//    let controller: FlutterViewController =
+//      window?.rootViewController as! FlutterViewController
+//    let channel = FlutterBasicMessageChannel(
+//      name: "myMessageChannel",
+//      binaryMessenger: controller.binaryMessenger,
+//      codec: FlutterStringCodec.sharedInstance()
+//    )
+//
+//    channel.setMessageHandler {
+//      (message: Any?, reply: FlutterReply) -> Void in reply("Hi from iOS")
+//      channel.sendMessage("Hello i am ios native") {
+//        (reply: Any?) -> Void in print("%@", reply as! String)
+//      }
+//    }
+//
+//    GeneratedPluginRegistrant.register(with: self)
+//    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+//  }
+//}
+
+@UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate {
   override func application(
     _ application: UIApplication,
@@ -9,18 +35,33 @@ import UIKit
   ) -> Bool {
     let controller: FlutterViewController =
       window?.rootViewController as! FlutterViewController
-    let channel = FlutterBasicMessageChannel(
-      name: "myMessageChannel",
-      binaryMessenger: controller.binaryMessenger,
-      codec: FlutterStringCodec.sharedInstance()
+      
+    // Method Channel
+    let methodChannel = FlutterMethodChannel(
+      name: "myMethodChannel",
+      binaryMessenger: controller.binaryMessenger
     )
 
-    channel.setMessageHandler {
-      (message: Any?, reply: FlutterReply) -> Void in reply("Hi from iOS")
-      channel.sendMessage("Hello i am ios native") {
-        (reply: Any?) -> Void in print("%@", reply as! String)
+    methodChannel.setMethodCallHandler({
+      (call: FlutterMethodCall, result: @escaping FlutterResult) -> Void in switch(call.method) {
+      case "oneMethod":
+        let argument = call.arguments as? Dictionary<String, Any>
+        let resultArg = ["one": 30, "two": 40]
+        result(resultArg)
+        
+        // Send data
+        methodChannel.invokeMethod("twoMethod", arguments: "Hi from iOS") {
+          (result: Any?) -> Void in
+          if let error = result as? FlutterError {
+          } else if FlutterMethodNotImplemented.isEqual(result) {
+          } else {
+            print("%@", result as! String)
+          }
+        }
+      default:
+        break;
       }
-    }
+    })
 
     GeneratedPluginRegistrant.register(with: self)
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
