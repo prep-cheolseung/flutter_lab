@@ -1,69 +1,104 @@
 import Flutter
 import UIKit
 
-//@main
-//@objc class AppDelegate: FlutterAppDelegate {
-//  override func application(
-//    _ application: UIApplication,
-//    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
-//  ) -> Bool {
-//    let controller: FlutterViewController =
-//      window?.rootViewController as! FlutterViewController
-//    let channel = FlutterBasicMessageChannel(
-//      name: "myMessageChannel",
-//      binaryMessenger: controller.binaryMessenger,
-//      codec: FlutterStringCodec.sharedInstance()
-//    )
-//
-//    channel.setMessageHandler {
-//      (message: Any?, reply: FlutterReply) -> Void in reply("Hi from iOS")
-//      channel.sendMessage("Hello i am ios native") {
-//        (reply: Any?) -> Void in print("%@", reply as! String)
-//      }
+// @main
+// @objc class AppDelegate: FlutterAppDelegate {
+//    override func application(
+//        _ application: UIApplication,
+//        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+//    ) -> Bool {
+//        let controller: FlutterViewController =
+//        window?.rootViewController as! FlutterViewController
+//        let channel = FlutterBasicMessageChannel(
+//            name: "myMessageChannel",
+//            binaryMessenger: controller.binaryMessenger,
+//            codec: FlutterStringCodec.sharedInstance()
+//        )
+
+//        channel.setMessageHandler {
+//            (message: Any?, reply: FlutterReply) -> Void in reply("Hi from iOS")
+//            channel.sendMessage("Hello i am ios native") {
+//                (reply: Any?) -> Void in print("%@", reply as! String)
+//            }
+//        }
+
+//        GeneratedPluginRegistrant.register(with: self)
+//        return super.application(application, didFinishLaunchingWithOptions: launchOptions)
 //    }
-//
-//    GeneratedPluginRegistrant.register(with: self)
-//    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
-//  }
-//}
+// }
 
-@UIApplicationMain
+// @main
+// @objc class AppDelegate: FlutterAppDelegate {
+//    override func application(
+//        _ application: UIApplication,
+//        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+//    ) -> Bool {
+//        let controller: FlutterViewController =
+//        window?.rootViewController as! FlutterViewController
+
+//        // Method Channel
+//        let methodChannel = FlutterMethodChannel(
+//            name: "myMethodChannel",
+//            binaryMessenger: controller.binaryMessenger
+//        )
+
+//        methodChannel.setMethodCallHandler({
+//            (call: FlutterMethodCall, result: @escaping FlutterResult) -> Void in switch(call.method) {
+//                case "oneMethod":
+//                    let argument = call.arguments as? Dictionary<String, Any>
+//                    let resultArg = ["one": 30, "two": 40]
+//                    result(resultArg)
+
+//                    // Send data
+//                    methodChannel.invokeMethod("twoMethod", arguments: "Hi from iOS") {
+//                        (result: Any?) -> Void in
+//                        if let error = result as? FlutterError {
+//                            } else if FlutterMethodNotImplemented.isEqual(result) {
+//                            } else {
+//                                print("%@", result as! String)
+//                            }
+//                    }
+//                default:
+//                    break;
+//            }
+//        })
+
+//        GeneratedPluginRegistrant.register(with: self)
+//        return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+//    }
+// }
+
+@main
 @objc class AppDelegate: FlutterAppDelegate {
-  override func application(
-    _ application: UIApplication,
-    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
-  ) -> Bool {
-    let controller: FlutterViewController =
-      window?.rootViewController as! FlutterViewController
-      
-    // Method Channel
-    let methodChannel = FlutterMethodChannel(
-      name: "myMethodChannel",
-      binaryMessenger: controller.binaryMessenger
-    )
+    override func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) -> Bool {
+        let controller: FlutterViewController =
+        window?.rootViewController as! FlutterViewController
 
-    methodChannel.setMethodCallHandler({
-      (call: FlutterMethodCall, result: @escaping FlutterResult) -> Void in switch(call.method) {
-      case "oneMethod":
-        let argument = call.arguments as? Dictionary<String, Any>
-        let resultArg = ["one": 30, "two": 40]
-        result(resultArg)
-        
-        // Send data
-        methodChannel.invokeMethod("twoMethod", arguments: "Hi from iOS") {
-          (result: Any?) -> Void in
-          if let error = result as? FlutterError {
-          } else if FlutterMethodNotImplemented.isEqual(result) {
-          } else {
-            print("%@", result as! String)
-          }
-        }
-      default:
-        break;
-      }
-    })
+        // Event Channel
+        let eventChannel = FlutterEventChannel(
+            name: "myEventChannel",
+            binaryMessenger: controller.binaryMessenger
+        )
 
-    GeneratedPluginRegistrant.register(with: self)
-    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
-  }
+        eventChannel.setStreamHandler(SwiftStreamHandler())
+
+        GeneratedPluginRegistrant.register(with: self)
+        return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+    }
+}
+
+class SwiftStreamHandler: NSObject, FlutterStreamHandler {
+    public func onListen(withArguments arguments: Any?,
+                         eventSink events: @escaping FlutterEventSink) ->
+                         FlutterError? {
+        events("Send event data... from iOS native...")
+        return nil
+    }
+
+    public func onCancel(withArguments arguments: Any?) -> FlutterError? {
+        return nil
+    }
 }
