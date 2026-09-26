@@ -67,16 +67,19 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 
+	// GeoLocation
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This app needs access to location when open.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>This app needs access to location when in the background.</string>
 
+	// ImagePicker
 	<key>NSCameraUsageDescription</key>
 	<string>NSCameraUsageDescription</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>NSMicrophoneUsageDescription</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>NSPhotoLibraryUsageDescription</string>
+
 </dict>
 </plist>
