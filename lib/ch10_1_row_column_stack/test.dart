@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Row, Column, Stack test')
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -23,10 +23,10 @@ class MyApp extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container(width: 50, height: 100, color: Colors.red,),
-                    Container(width: 50, height: 50, color: Colors.green,),
-                    Container(width: 50, height: 150, color: Colors.blue,),
-                  ],
+                    Container(width: 50, height: 100, color: Colors.red),
+                    Container(width: 50, height: 50, color: Colors.green),
+                    Container(width: 50, height: 150, color: Colors.blue)
+                  ]
                 )
               ),
               Container(
@@ -36,10 +36,10 @@ class MyApp extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    Container(width: 50, height: 100, color: Colors.red,),
-                    Container(width: 50, height: 50, color: Colors.green,),
-                    Container(width: 50, height: 150, color: Colors.blue,),
-                  ],
+                    Container(width: 50, height: 100, color: Colors.red),
+                    Container(width: 50, height: 50, color: Colors.green),
+                    Container(width: 50, height: 150, color: Colors.blue)
+                  ]
                 )
               ),
               Container(
@@ -50,10 +50,10 @@ class MyApp extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Container(width: 50, height: 100, color: Colors.red,),
-                    Container(width: 50, height: 50, color: Colors.green,),
-                    Container(width: 50, height: 150, color: Colors.blue,),
-                  ],
+                    Container(width: 50, height: 100, color: Colors.red),
+                    Container(width: 50, height: 50, color: Colors.green),
+                    Container(width: 50, height: 150, color: Colors.blue)
+                  ]
                 )
               ),
               Container(
@@ -63,25 +63,25 @@ class MyApp extends StatelessWidget {
                 child: Stack(
                   children: [
                     Container(
-                      color: Colors.red,
+                      color: Colors.red
                     ),
                     Container(
                       color: Colors.green,
                       width: 100,
-                      height: 100,
+                      height: 100
                     ),
                     Container(
                       color: Colors.yellow,
                       width: 50,
-                      height: 50,
+                      height: 50
                     )
-                  ],
-                ),
+                  ]
+                )
               )
-            ],
-          ),
-        ),
-      ),
+            ]
+          )
+        )
+      )
     );
   }
 }

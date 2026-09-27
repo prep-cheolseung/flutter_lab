@@ -24,8 +24,8 @@ class MyListWidget extends StatefulWidget {
 
 class _MyListWidgetState extends State<MyListWidget> {
   List<Widget> widgetList = [
-    MyColorItemWidget(Colors.red, key: UniqueKey(),),
-    MyColorItemWidget(Colors.blue, key: UniqueKey(),),
+    MyColorItemWidget(Colors.red, key: UniqueKey()),
+    MyColorItemWidget(Colors.blue, key: UniqueKey())
   ];
 
   onChange() {
@@ -39,16 +39,20 @@ class _MyListWidgetState extends State<MyListWidget> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: AppBar(title: Text('Key Test'),),
+      appBar: AppBar(
+        title: Text('Key test')
+      ),
       body: Column(
         children: [
-          Row(children: widgetList,),
+          Row(
+            children: widgetList
+          ),
           ElevatedButton(
             onPressed: onChange,
             child: Text("Toggle")
           )
-        ],
-      ),
+        ]
+      )
     );
   }
 }
@@ -75,7 +79,7 @@ class _MyColorItemWidgetState extends State<MyColorItemWidget> {
       child: Container(
         color: color,
         width: 150,
-        height: 150,
+        height: 150
       )
     );
   }

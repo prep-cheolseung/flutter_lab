@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Stateless Test'),
+          title: Text('Stateless test')
         ),
         body: Center(
           child: Row(
@@ -34,10 +34,10 @@ class MyApp extends StatelessWidget {
                 onPressed: changeCheck,
                 icon: (
                   enabled ?
-                  Icon(Icons.check_box, size: 20,) :
-                  Icon(Icons.check_box_outline_blank, size: 20,)
+                  Icon(Icons.check_box, size: 20) :
+                  Icon(Icons.check_box_outline_blank, size: 20)
                 ),
-                color: Colors.red,
+                color: Colors.red
               ),
               Container(
                 padding: EdgeInsets.only(left: 16),
@@ -45,13 +45,13 @@ class MyApp extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
+                  )
+                )
+              )
+            ]
+          )
+        )
+      )
     );
   }
 }

@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Text test')
         ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
                 decorationStyle: TextDecorationStyle.wavy,
                 fontSize: 20,
                 fontStyle: FontStyle.italic,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.bold
               ),
             ),
             Text(
@@ -39,14 +39,14 @@ class MyApp extends StatelessWidget {
                 fontSize: 20
               ),
               maxLines: 2,
-              overflow: TextOverflow.fade,
+              overflow: TextOverflow.fade
             ),
             RichText(
               text: TextSpan(
                 text: 'HE',
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: 20,
+                  fontSize: 20
                 ),
                 children: [
                   TextSpan(
@@ -67,14 +67,15 @@ class MyApp extends StatelessWidget {
                   TextSpan(
                     text: 'TTER',
                     style: TextStyle(
-                      fontWeight: FontWeight.bold)
+                      fontWeight: FontWeight.bold
+                    )
                   )
                 ]
               )
             )
-          ],
-        ),
-      ),
+          ]
+        )
+      )
     );
   }
 }

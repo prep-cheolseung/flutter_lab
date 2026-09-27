@@ -13,11 +13,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('External package test')
         ),
         body: Center(
-          child: Text('${wordPair.first}'),
-        ),
+          child: Text('${wordPair.first}')
+        )
       )
     );
   }

@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Gesture test')
         ),
         body: Column(
           children: [
@@ -32,11 +32,11 @@ class MyApp extends StatelessWidget {
               child: Text('Click Me'),
               style: ButtonStyle(
                 backgroundColor: WidgetStateProperty.all<Color>(Colors.red)
-              ),
+              )
             )
-          ],
-        ),
-      ),
+          ]
+        )
+      )
     );
   }
 }

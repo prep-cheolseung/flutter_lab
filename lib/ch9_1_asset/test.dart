@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart'; // Provides rootBundle for asset usage
+// 애셋 이용을 위한 rootBundle 제공
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  // Function that reads and returns an asset file using rootBundle
-  // Future means asynchronous data
+  // rootBundle을 이용해 애셋 파일을 읽어 반환하는 함수
+  // Future는 비동기 데이터를 의미
   Future<String> useRootBundle() async {
     return await rootBundle.loadString('assets/text/my_text.txt');
   }
 
-  // Function that reads and returns an asset file using DefaultAssetBundled
+  // DefaultAssetBundle을 이용해 애셋 파일을 읽어 반환하는 함수
   Future<String> useDefaultAssetBundle(BuildContext context) async {
     return await DefaultAssetBundle.of(context).loadString('assets/text/my_text.txt');
   }
@@ -23,20 +24,20 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Asset test')
         ),
         body: Column(
           children: [
             Image.asset('images/icon.jpg'),
             Image.asset('images/icon/user.png'),
-            // FutureBuilder is a widget that constructs a screen using asynchronous data
+
+            // FutureBuilder는 비동기 데이터를 이용해 화면을 구성하는 위젯
             FutureBuilder(
-              // Call the useRootBundle() function
+              // useRootBundle() 함수 호출
               future: useRootBundle(),
-              // The result of the useRootBundle() function is passed to the snapshot,
-              // and the screen layout is constructed using this value
+              // useRootBundle() 함수의 결괏값이 snapshot에 전달되며 이 값으로 화면을 구성
               builder: (context, snapshot) {
-                return Text('RootBundle : ${snapshot.data}');
+                return Text('rootBundle : ${snapshot.data}');
               }
             ),
             FutureBuilder(
@@ -45,9 +46,9 @@ class MyApp extends StatelessWidget {
                 return Text('DefaultAssetBundle : ${snapshot.data}');
               }
             )
-          ],
-        ),
-      ),
+          ]
+        )
+      )
     );
   }
 }

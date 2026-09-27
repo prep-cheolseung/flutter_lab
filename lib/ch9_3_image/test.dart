@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Image test')
         ),
         body: Column(
           children: [
@@ -26,12 +26,12 @@ class MyApp extends StatelessWidget {
                 'images/big.jpeg',
                 width: 200,
                 height: 100,
-                fit: BoxFit.fill,
-              ),
+                fit: BoxFit.fill
+              )
             )
-          ],
-        ),
-      ),
+          ]
+        )
+      )
     );
   }
 }

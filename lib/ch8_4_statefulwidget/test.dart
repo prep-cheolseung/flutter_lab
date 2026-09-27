@@ -11,10 +11,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Stateful Test'),
+          title: Text('Stateful test')
         ),
-        body: MyWidget(),
-      ),
+        body: MyWidget()
+      )
     );
   }
 }
@@ -50,13 +50,13 @@ class _MyWidgetState extends State<MyWidget> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           IconButton(
+            onPressed: changeCheck,
             icon: (
               enabled ?
-              Icon(Icons.check_box, size: 20,) :
-              Icon(Icons.check_box_outline_blank, size: 20,)
+              Icon(Icons.check_box, size: 20) :
+              Icon(Icons.check_box_outline_blank, size: 20)
             ),
-            color: Colors.red,
-            onPressed: changeCheck,
+            color: Colors.red
           ),
           Container(
             padding: EdgeInsets.only(left: 16),
@@ -64,11 +64,11 @@ class _MyWidgetState extends State<MyWidget> {
               style: TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.bold
-              ),
-            ),
-          ),
-        ],
-      ),
+              )
+            )
+          )
+        ]
+      )
     );
   }
 }

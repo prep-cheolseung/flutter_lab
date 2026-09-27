@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Align, Positioned test')
         ),
         body: Stack(
           children: [
@@ -20,16 +20,16 @@ class MyApp extends StatelessWidget {
               child: Container(
                 color: Colors.yellow,
                 width: 150,
-                height: 150,
-              ),
+                height: 150
+              )
             ),
             Align(
               alignment: FractionalOffset(1.0, 0.0),
               child: Container(
                 color: Colors.blue,
                 width: 150,
-                height: 150,
-              ),
+                height: 150
+              )
             ),
             Positioned(
               left: 40.0,
@@ -37,12 +37,12 @@ class MyApp extends StatelessWidget {
               child: Container(
                 color: Colors.pink,
                 width: 150,
-                height: 150,
+                height: 150
               )
             )
-          ],
-        ),
-      ),
+          ]
+        )
+      )
     );
   }
 }

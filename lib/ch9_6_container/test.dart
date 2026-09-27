@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Container test')
         ),
         body: Container(
           height: Size.infinite.height,
@@ -21,9 +21,9 @@ class MyApp extends StatelessWidget {
               end: Alignment.bottomRight,
               colors: [
                 Colors.lightBlueAccent,
-                Colors.deepPurpleAccent,
-              ],
-            ),
+                Colors.deepPurpleAccent
+              ]
+            )
           ),
           child: Center(
             child: Container(
@@ -33,14 +33,14 @@ class MyApp extends StatelessWidget {
                 image: DecorationImage(
                   image: AssetImage('images/big.jpeg'),
                   fit: BoxFit.cover
-                ),
+                )
               ),
               width: 200,
-              height: 200,
-            ),
+              height: 200
+            )
           )
-        ),
-      ),
+        )
+      )
     );
   }
 }

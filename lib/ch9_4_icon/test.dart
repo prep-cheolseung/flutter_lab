@@ -16,29 +16,29 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Icon test')
         ),
         body: Column(
           children: [
             Icon(
               Icons.alarm,
               color: Colors.red,
-              size: 100,
+              size: 100
             ),
             FaIcon(
               FontAwesomeIcons.bell,
-              size: 100,
+              size: 100
             ),
             IconButton(
               onPressed: onPressed,
               icon: Icon(
                 Icons.alarm,
-                size: 100,
+                size: 100
               )
             )
-          ],
-        ),
-      ),
+          ]
+        )
+      )
     );
   }
 }

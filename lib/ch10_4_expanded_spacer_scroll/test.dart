@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Expanded, Spacer, Scroll test')
         ),
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
                   children: <Widget>[
                     Container(
                       color: Colors.red,
-                      width: 100,
+                      width: 100
                     ),
                     Expanded(
                       flex: 1,
@@ -32,9 +32,9 @@ class MyApp extends StatelessWidget {
                     Expanded(
                       flex: 1,
                       child: Container(color: Colors.yellow)
-                    ),
-                  ],
-                ),
+                    )
+                  ]
+                )
               ),
               Container(
                 color: Colors.green,
@@ -46,17 +46,17 @@ class MyApp extends StatelessWidget {
                     Image.asset('images/lab_instagram_icon_3.jpg'),
                     Spacer(),
                     Image.asset('images/lab_instagram_icon_4.jpg')
-                  ],
-                ),
+                  ]
+                )
               ),
               Container(
                 color: Colors.blue,
-                height: 300,
+                height: 300
               )
-            ],
-          ),
-        ),
-      ),
+            ]
+          )
+        )
+      )
     );
   }
 }
