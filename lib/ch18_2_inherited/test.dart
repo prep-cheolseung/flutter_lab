@@ -12,26 +12,27 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Inherited test')
         ),
-        body: MyInheritedWidget(TestWidget()),
-      ),
+        body: MyInheritedWidget(TestWidget())
+      )
     );
   }
 }
 
 class MyInheritedWidget extends InheritedWidget {
-  int count = 0; // Child shared data
+  // 하위 공유 데이터
+  int count = 0;
 
   MyInheritedWidget(child) : super(child: child);
 
-  // Function to be called from below
+  // 하위에서 호출할 함수
   increment() {
     count++;
   }
 
   @override
-  bool updateShouldNotify(InheritedWidget oldWidget) => true;
+  bool updateShouldNotify(MyInheritedWidget oldWidget) => true;
 
   static MyInheritedWidget? of(BuildContext context) => context.dependOnInheritedWidgetOfExactType<MyInheritedWidget>();
 }
@@ -41,6 +42,7 @@ class TestSubWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     int count = MyInheritedWidget.of(context)!.count;
+    
     return Container(
       width: 200,
       height: 200,
@@ -52,14 +54,14 @@ class TestSubWidget extends StatelessWidget {
             color: Colors.white,
             fontSize: 20,
             fontWeight: FontWeight.bold
-          ),
-        ),
-      ),
+          )
+        )
+      )
     );
   }
 }
 
-// Sub-widget of MyInheritedWidget
+// MyInheritedWidget의 하위 위젯
 class TestWidget extends StatelessWidget {
   TestWidget() {
     print('Test-widget constructor...');
@@ -87,7 +89,7 @@ class TestWidget extends StatelessWidget {
                     color: Colors.white,
                     fontSize: 20,
                     fontWeight: FontWeight.bold
-                  ),
+                  )
                 ),
                 ElevatedButton(
                   // onPressed: () => setState(() => increment()),
@@ -104,9 +106,9 @@ class TestWidget extends StatelessWidget {
                   child: Text('Count++')
                 ),
                 TestSubWidget()
-              ],
-            ),
-          ),
+              ]
+            )
+          )
         );
       }
     );

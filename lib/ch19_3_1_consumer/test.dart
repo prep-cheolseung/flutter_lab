@@ -35,16 +35,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Consumer test')
         ),
         body: MultiProvider(
           providers: [
             ChangeNotifierProvider<MyDataModel1>.value(value: MyDataModel1()),
             ChangeNotifierProvider<MyDataModel2>.value(value: MyDataModel2())
           ],
-          child: HomeWidget(),
-        ),
-      ),
+          child: HomeWidget()
+        )
+      )
     );
   }
 }
@@ -63,7 +63,7 @@ class HomeWidget extends StatelessWidget {
               builder: (context, model1, model2, child) {
                 return SubWidget1(model1, model2, child);
               },
-              child: SubWidget2(),
+              child: SubWidget2()
             ),
             Column(
               children: [
@@ -81,11 +81,11 @@ class HomeWidget extends StatelessWidget {
                   },
                   child: Text('Model2 Change')
                 )
-              ],
+              ]
             )
-          ],
-        ),
-      ),
+          ]
+        )
+      )
     );
   }
 }
@@ -102,7 +102,7 @@ class SubWidget1 extends StatelessWidget {
     // TODO: implement build
     return Container(
       color: Colors.green,
-      padding:  EdgeInsets.all(20),
+      padding: EdgeInsets.all(20),
       child: Column(
         children: [
           Text(
@@ -111,11 +111,11 @@ class SubWidget1 extends StatelessWidget {
               color: Colors.white,
               fontSize: 20,
               fontWeight: FontWeight.bold
-            ),
+            )
           ),
           child!
-        ],
-      ),
+        ]
+      )
     );
   }
 }
@@ -133,8 +133,8 @@ class SubWidget2 extends StatelessWidget {
           color: Colors.white,
           fontSize: 20,
           fontWeight: FontWeight.bold
-        ),
-      ),
+        )
+      )
     );
   }
 }

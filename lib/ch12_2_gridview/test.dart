@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Gridview test'),
         ),
         body: GridView.builder(
           itemCount: cities.length,
@@ -23,15 +23,16 @@ class MyApp extends StatelessWidget {
             return Card(
               child: Column(
                 children: [
-                  Text(cities[index]), Image.asset('images/big.jpeg')
-                ],
-              ),
+                  Text(cities[index]),
+                  Image.asset('images/big.jpeg')
+                ]
+              )
             );
           },
           scrollDirection: Axis.horizontal,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
-        ),
-      ),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3)
+        )
+      )
     );
   }
 }

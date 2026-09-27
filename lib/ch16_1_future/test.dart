@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Future test')
         ),
         body: FutureBuilder(
           future: sum(),
@@ -35,8 +35,8 @@ class MyApp extends StatelessWidget {
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 30
-                  ),
-                ),
+                  )
+                )
               );
             }
             return Center(
@@ -45,12 +45,12 @@ class MyApp extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 30
-                ),
-              ),
+                )
+              )
             );
           }
-        ),
-      ),
+        )
+      )
     );
   }
 }

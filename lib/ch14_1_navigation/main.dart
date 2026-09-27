@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'one_screen.dart';
 import 'two_screen.dart';
 import 'three_screen.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
             settings: settings
           );
         }
-      },
+      }
     );
   }
 }

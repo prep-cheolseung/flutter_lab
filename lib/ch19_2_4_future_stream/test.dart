@@ -20,21 +20,21 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('FutureProvider, StreamProvider test')
         ),
         body: MultiProvider(
           providers: [
             FutureProvider<String>(
-              create: (context) => Future.delayed(Duration(seconds: 4), () => 'Flutter'),
-              initialData: "Hello",
+              create: (context) => Future.delayed(Duration(seconds: 4), () => "Flutter"),
+              initialData: "Hello"
             ),
             StreamProvider<int>(
               create: (context) => streamFun(), initialData: 0
             )
           ],
-          child: SubWidget(),
-        ),
-      ),
+          child: SubWidget()
+        )
+      )
     );
   }
 }
@@ -57,7 +57,7 @@ class SubWidget extends StatelessWidget {
                 color: Colors.white,
                 fontSize: 20,
                 fontWeight: FontWeight.bold
-              ),
+              )
             ),
             Text(
               'Stream : ${streamState}',
@@ -65,11 +65,11 @@ class SubWidget extends StatelessWidget {
                 color: Colors.white,
                 fontSize: 20,
                 fontWeight: FontWeight.bold
-              ),
+              )
             )
-          ],
-        ),
-      ),
+          ]
+        )
+      )
     );
   }
 }

@@ -16,13 +16,14 @@ class _MainAppState extends State<MainApp> {
     // TODO: implement build
     return MaterialApp.router(
       routerDelegate: MyRouterDelegate(),
-      routeInformationParser: MyRouteInformationParser(),
+      routeInformationParser: MyRouteInformationParser()
     );
   }
 }
 
 class MyRoutePath {
   String? id;
+  
   MyRoutePath.home() : this.id = null;
   MyRoutePath.detail(this.id);
 }
@@ -81,7 +82,7 @@ class MyRouterDelegate extends RouterDelegate<MyRoutePath> with ChangeNotifier, 
         selectId = null;
         notifyListeners();
         return true;
-      },
+      }
     );
   }
 
@@ -94,7 +95,7 @@ class MyRouterDelegate extends RouterDelegate<MyRoutePath> with ChangeNotifier, 
 
   void _handleOnPressed(String id) {
     selectId = id;
-  notifyListeners();
+    notifyListeners();
   }
 }
 
@@ -118,20 +119,20 @@ class HomeScreen extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 30
-                ),
+                )
               ),
               ElevatedButton(
-                child: Text('Go detail with 1'),
-                onPressed: () => onPressed('1')
+                onPressed: () => onPressed('1'),
+                child: Text('Go detail with 1')
               ),
               ElevatedButton(
-                child: Text('Go detail with 2'),
-                onPressed: () => onPressed('2')
+                onPressed: () => onPressed('2'),
+                child: Text('Go detail with 2')
               )
-            ],
-          ),
-        ),
-      ),
+            ]
+          )
+        )
+      )
     );
   }
 }
@@ -153,10 +154,10 @@ class DetailScreen extends StatelessWidget {
             style: TextStyle(
               color: Colors.white,
               fontSize: 30
-            ),
-          ),
-        ),
-      ),
+            )
+          )
+        )
+      )
     );
   }
 }

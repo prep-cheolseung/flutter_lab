@@ -5,7 +5,11 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  PageController controller = PageController(initialPage: 1, viewportFraction: 0.8);
+  PageController controller =
+    PageController(
+      initialPage: 1,
+      viewportFraction: 0.8
+    );
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Pageview test')
         ),
         body: PageView(
           controller: controller,
@@ -27,9 +31,9 @@ class MyApp extends StatelessWidget {
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 30
-                  ),
-                ),
-              ),
+                  )
+                )
+              )
             ),
             Container(
               color: Colors.green,
@@ -40,9 +44,9 @@ class MyApp extends StatelessWidget {
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 30
-                  ),
-                ),
-              ),
+                  )
+                )
+              )
             ),
             Container(
               color: Colors.blue,
@@ -53,13 +57,13 @@ class MyApp extends StatelessWidget {
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 30
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
+                  )
+                )
+              )
+            )
+          ]
+        )
+      )
     );
   }
 }

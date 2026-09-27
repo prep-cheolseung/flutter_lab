@@ -25,15 +25,15 @@ class _HomeScreenState extends State<MyApp> with SingleTickerProviderStateMixin 
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Tab test'),
           bottom: TabBar(
             controller: controller,
             tabs: <Widget>[
-              Tab(text: 'One',),
-              Tab(text: 'Two',),
-              Tab(text: 'Three',),
+              Tab(text: 'One'),
+              Tab(text: 'Two'),
+              Tab(text: 'Three')
             ]
-          ),
+          )
         ),
         body: TabBarView(
           controller: controller,
@@ -44,8 +44,8 @@ class _HomeScreenState extends State<MyApp> with SingleTickerProviderStateMixin 
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold
-                ),
-              ),
+                )
+              )
             ),
             Center(
               child: Text(
@@ -53,8 +53,8 @@ class _HomeScreenState extends State<MyApp> with SingleTickerProviderStateMixin 
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold
-                ),
-              ),
+                )
+              )
             ),
             Center(
               child: Text(
@@ -62,12 +62,12 @@ class _HomeScreenState extends State<MyApp> with SingleTickerProviderStateMixin 
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold
-                ),
-              ),
+                )
+              )
             )
-          ],
-        ),
-      ),
+          ]
+        )
+      )
     );
   }
 }

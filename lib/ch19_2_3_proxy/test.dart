@@ -17,6 +17,7 @@ class Sum {
 
   void set sum(value) {
     _sum = 0;
+
     for (int i = 1; i <= value; i++) {
       _sum += i;
     }
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Proxy test')
         ),
         body: MultiProvider(
           providers: [
@@ -60,9 +61,9 @@ class MyApp extends StatelessWidget {
               }
             )
           ],
-          child: SubWidget(),
-        ),
-      ),
+          child: SubWidget()
+        )
+      )
     );
   }
 }
@@ -74,6 +75,7 @@ class SubWidget extends StatelessWidget {
     var counter = Provider.of<Counter>(context);
     var sum = Provider.of<Sum>(context);
     var string_data = Provider.of<String>(context);
+
     return Container(
       color: Colors.orange,
       child: Center(
@@ -86,7 +88,7 @@ class SubWidget extends StatelessWidget {
                 color: Colors.white,
                 fontSize: 20,
                 fontWeight: FontWeight.bold
-              ),
+              )
             ),
             Text(
               'Sum : ${sum.sum}',
@@ -94,7 +96,7 @@ class SubWidget extends StatelessWidget {
                 color: Colors.white,
                 fontSize: 20,
                 fontWeight: FontWeight.bold
-              ),
+              )
             ),
             Text(
               'String : ${string_data}',
@@ -102,7 +104,7 @@ class SubWidget extends StatelessWidget {
                 color: Colors.white,
                 fontSize: 20,
                 fontWeight: FontWeight.bold
-              ),
+              )
             ),
             ElevatedButton(
               onPressed: () {
@@ -110,9 +112,9 @@ class SubWidget extends StatelessWidget {
               },
               child: Text('Increment')
             )
-          ],
-        ),
-      ),
+          ]
+        )
+      )
     );
   }
 }

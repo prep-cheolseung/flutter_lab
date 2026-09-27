@@ -39,7 +39,7 @@ class MyAppState extends State<MyApp> {
         fontSize: 25,
         fontWeight: FontWeight.bold
       )
-    ),
+    )
   ];
 
   void _onItemTapped(int index) {
@@ -65,35 +65,35 @@ class MyAppState extends State<MyApp> {
                 alignment: Alignment.center,
                 height: 48.0,
                 child: Text('AppBar Bottom Text')
-              ),
-            ),
+              )
+            )
           ),
           flexibleSpace: Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                fit: BoxFit.fill,
-                image: AssetImage('images/big.jpeg')
+                image: AssetImage('images/big.jpeg'),
+                fit: BoxFit.fill
               )
-            ),
+            )
           ),
           title: Text('AppBar Title'),
           actions: <Widget>[
             IconButton(
-              icon: const Icon(Icons.add_alert),
               onPressed: () {},
+              icon: const Icon(Icons.add_alert)
             ),
             IconButton(
-              icon: const Icon(Icons.phone),
               onPressed: () {},
+              icon: const Icon(Icons.phone)
             )
-          ],
+          ]
         ),
-        body:  Center(
-          child: _widgetOptions.elementAt(_selectedIndex),
+        body: Center(
+          child: _widgetOptions.elementAt(_selectedIndex)
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
-          child: const Icon(Icons.add),
+          child: const Icon(Icons.add)
         ),
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.shifting,
@@ -101,27 +101,27 @@ class MyAppState extends State<MyApp> {
             BottomNavigationBarItem(
               backgroundColor: Colors.green,
               icon: Icon(Icons.home),
-              label: 'First',
+              label: 'First'
             ),
             BottomNavigationBarItem(
               backgroundColor: Colors.red,
               icon: Icon(Icons.business),
-              label: 'Second',
+              label: 'Second'
             ),
             BottomNavigationBarItem(
               backgroundColor: Colors.purple,
-              icon: Icon(Icons.home),
-              label: 'Third',
+              icon: Icon(Icons.school),
+              label: 'Third'
             ),
             BottomNavigationBarItem(
               backgroundColor: Colors.pink,
-              icon: Icon(Icons.home),
-              label: 'Fourth',
-            ),
+              icon: Icon(Icons.school),
+              label: 'Fourth'
+            )
           ],
           currentIndex: _selectedIndex,
           selectedItemColor: Colors.amber[800],
-          onTap: _onItemTapped,
+          onTap: _onItemTapped
         ),
         drawer: Drawer(
           child: ListView(
@@ -131,20 +131,20 @@ class MyAppState extends State<MyApp> {
                 child: Text('Drawer Header'),
                 decoration: BoxDecoration(
                   color: Colors.blue
-                ),
+                )
               ),
               ListTile(
                 onTap: () {},
-                title: Text('Item 1'),
+                title: Text('Item 1')
               ),
               ListTile(
                 onTap: () {},
-                title: Text('Item 2'),
-              ),
-            ],
-          ),
-        ),
-      ),
+                title: Text('Item 2')
+              )
+            ]
+          )
+        )
+      )
     );
   }
 }

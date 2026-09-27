@@ -11,10 +11,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Textfield test')
         ),
         body: TestScreen()
-      ),
+      )
     );
   }
 }
@@ -53,7 +53,7 @@ class TextState extends State<TestScreen> {
     print("Build...");
     return Column(
       children: [
-        Text('TextField Text'),
+        Text('TextField text'),
         TextField(
           controller: controller,
           decoration: InputDecoration(
@@ -62,15 +62,17 @@ class TextState extends State<TestScreen> {
             helperText: "Please enter data.",
             hintText: "Hint Text",
             labelText: 'Data',
-            prefixIcon: Icon(Icons.input),
+            prefixIcon: Icon(Icons.input)
           ),
           keyboardType: TextInputType.emailAddress,
           minLines: 1,
           maxLines: 5,
-          style: TextStyle(fontSize: 15),
-          textInputAction: TextInputAction.search,
+          style: TextStyle(
+            fontSize: 15
+          ),
+          textInputAction: TextInputAction.search
         )
-      ],
+      ]
     );
   }
 }

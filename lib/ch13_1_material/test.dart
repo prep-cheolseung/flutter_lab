@@ -12,22 +12,22 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // useMaterial3: false,
-        // primarySwatch: Colors.pink,
+        // primarySwatch: Colors.pink
         // colorScheme: ColorScheme.light(primary: Colors.pink),
         // colorScheme: ColorScheme.dark(primary: Colors.pink),
-        // useMaterial3: true,
+        // useMaterial3: true
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.pink,
-          dynamicSchemeVariant: DynamicSchemeVariant.fidelity,
+          dynamicSchemeVariant: DynamicSchemeVariant.fidelity
         ),
         appBarTheme: AppBarTheme(
           backgroundColor: Colors.orange,
-          foregroundColor: Colors.black,
+          foregroundColor: Colors.black
         )
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Material test')
         ),
         body: Center(
           child: Column(
@@ -40,15 +40,15 @@ class MyApp extends StatelessWidget {
                 value: true,
                 onChanged: (value) {}
               ),
-              Text('Hello Flutter'),
-            ],
-          ),
+              Text('Hello Flutter')
+            ]
+          )
         ),
         floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
-          onPressed: () {}
-        ),
-      ),
+          onPressed: () {},
+          child: Icon(Icons.add)
+        )
+      )
     );
   }
 }

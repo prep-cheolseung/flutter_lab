@@ -24,13 +24,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Changenotifier test')
         ),
         body: ChangeNotifierProvider<Counter>.value(
           value: Counter(),
-          child: SubWidget(),
+          child: SubWidget()
         )
-      ),
+      )
     );
   }
 }
@@ -52,7 +52,7 @@ class SubWidget extends StatelessWidget {
                 color: Colors.white,
                 fontSize: 20,
                 fontWeight: FontWeight.bold
-              ),
+              )
             ),
             ElevatedButton(
               onPressed: () {
@@ -60,9 +60,9 @@ class SubWidget extends StatelessWidget {
               },
               child: Text('Increment')
             )
-          ],
-        ),
-      ),
+          ]
+        )
+      )
     );
   }
 }

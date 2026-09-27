@@ -9,6 +9,7 @@ void main() {
 class MyApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
+    // TODO: implement createState
     return MyAppState();
   }
 }
@@ -77,9 +78,9 @@ class MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
-      home:  Scaffold(
+      home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('HTTP test')
         ),
         body: Center(
           child: Column(
@@ -87,21 +88,21 @@ class MyAppState extends State<MyApp> {
             children: [
               Text('$result'),
               ElevatedButton(
-                child: Text('GET'),
-                onPressed: onPressGet
+                onPressed: onPressGet,
+                child: Text('GET')
               ),
               ElevatedButton(
-                child: Text('POST'),
-                onPressed: onPressPost
+                onPressed: onPressPost,
+                child: Text('POST')
               ),
               ElevatedButton(
-                child: Text('Client'),
-                onPressed: onPressClient
+                onPressed: onPressClient,
+                child: Text('Client')
               )
-            ],
-          ),
-        ),
-      ),
+            ]
+          )
+        )
+      )
     );
   }
 }

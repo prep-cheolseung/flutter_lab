@@ -65,7 +65,7 @@ class MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Isolate test')
         ),
         body: Center(
           child: Column(
@@ -75,16 +75,16 @@ class MyAppState extends State<MyApp> {
                 result,
                 style: TextStyle(
                   fontSize: 30
-                ),
+                )
               ),
               ElevatedButton(
                 onPressed: onPress,
                 child: Text('Test')
               )
-            ],
-          ),
-        ),
-      ),
+            ]
+          )
+        )
+      )
     );
   }
 }

@@ -20,8 +20,8 @@ class MyAppState extends State<MyApp> {
           slivers: [
             SliverAppBar(
               leading: IconButton(
-                icon: Icon(Icons.expand),
                 onPressed: () {},
+                icon: Icon(Icons.expand)
               ),
               backgroundColor: Colors.pink,
               elevation: 50,
@@ -32,36 +32,36 @@ class MyAppState extends State<MyApp> {
               flexibleSpace: Container(
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    fit: BoxFit.fill,
-                    image: AssetImage('images/big.jpeg')
+                    image: AssetImage('images/big.jpeg'),
+                    fit: BoxFit.fill
                   )
-                ),
+                )
               ),
               title: Text('AppBar Title'),
               actions: <Widget>[
                 IconButton(
-                  icon: const Icon(Icons.add_alert),
                   onPressed: () {},
+                  icon: const Icon(Icons.add_alert)
                 ),
                 IconButton(
-                  icon: const Icon(Icons.phone),
                   onPressed: () {},
-                ),
-              ],
+                  icon: const Icon(Icons.phone)
+                )
+              ]
             ),
             SliverFixedExtentList(
               itemExtent: 50.0,
               delegate: SliverChildBuilderDelegate(
                 (BuildContext context, int index) {
                   return ListTile(
-                    title: Text('Hello Flutter Item $index'),
+                    title: Text('Hello Flutter Item $index')
                   );
                 }
-              ),
+              )
             )
-          ],
-        ),
-      ),
+          ]
+        )
+      )
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'user.dart';
 
 class OneScreen extends StatelessWidget {
@@ -8,7 +9,7 @@ class OneScreen extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('One Screen'),
+          title: Text('One Screen')
         ),
         body: Container(
           color: Colors.red,
@@ -21,7 +22,7 @@ class OneScreen extends StatelessWidget {
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 30
-                  ),
+                  )
                 ),
                 ElevatedButton(
                   onPressed: () async {
@@ -33,17 +34,17 @@ class OneScreen extends StatelessWidget {
                         "arg3": User('Lee', 'Seoul')
                       },
                       context,
-                      '/two',
+                      '/two'
                     );
-                    print('Result: ${(result as User).name}, ${(result as User).address}');
+                    print('Result : ${(result as User).name}, ${(result as User).address}');
                   },
-                  child: Text('Go Two'),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
+                  child: Text('Go Two')
+                )
+              ]
+            )
+          )
+        )
+      )
     );
   }
 }

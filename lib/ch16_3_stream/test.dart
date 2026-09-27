@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Stream test')
         ),
         body: Center(
           child: StreamBuilder(
@@ -35,8 +35,8 @@ class MyApp extends StatelessWidget {
                     'Completed',
                     style: TextStyle(
                       fontSize: 30
-                    ),
-                  ),
+                    )
+                  )
                 );
               } else if (snapshot.connectionState == ConnectionState.waiting) {
                 return Center(
@@ -46,16 +46,16 @@ class MyApp extends StatelessWidget {
                       SizedBox(
                         width: 100,
                         height: 100,
-                        child: CircularProgressIndicator(),
+                        child: CircularProgressIndicator()
                       ),
                       Text(
                         'Waiting...',
                         style: TextStyle(
                           fontSize: 20
-                        ),
+                        )
                       )
-                    ],
-                  ),
+                    ]
+                  )
                 );
               }
               return Center(
@@ -63,13 +63,13 @@ class MyApp extends StatelessWidget {
                   'Data : ${snapshot.data}',
                   style: TextStyle(
                     fontSize: 30
-                  ),
-                ),
+                  )
+                )
               );
             }
-          ),
-        ),
-      ),
+          )
+        )
+      )
     );
   }
 }

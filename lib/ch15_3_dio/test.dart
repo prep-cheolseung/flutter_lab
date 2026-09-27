@@ -26,7 +26,7 @@ class MyAppState extends State<MyApp> {
         receiveTimeout: Duration(seconds: 5),
         headers: {
           HttpHeaders.contentTypeHeader: 'application/json',
-          HttpHeaders.acceptHeader: 'application//json'
+          HttpHeaders.acceptHeader: 'application/json'
         }
       ));
 
@@ -53,7 +53,7 @@ class MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Dio test')
         ),
         body: Center(
           child: Column(
@@ -61,13 +61,13 @@ class MyAppState extends State<MyApp> {
             children: [
               Text('$result'),
               ElevatedButton(
-                child: Text('Get Server Data'),
-                onPressed: dioTest
+                onPressed: dioTest,
+                child: Text('Get Server Data')
               )
-            ],
-          ),
-        ),
-      ),
+            ]
+          )
+        )
+      )
     );
   }
 }

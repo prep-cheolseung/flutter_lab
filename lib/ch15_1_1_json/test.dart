@@ -9,6 +9,7 @@ void main() {
 class MyApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
+    // TODO: implement createState
     return MyAppState();
   }
 }
@@ -29,7 +30,7 @@ class Todo {
 }
 
 class MyAppState extends State<MyApp> {
-  String jsonStr = '{"id": 1, "title": "HELLO", "completed": false}';
+  String jsonStr = '{"id": 1, "title": "Hello", "completed": false}';
   Todo? todo;
   String result = '';
 
@@ -53,7 +54,7 @@ class MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Json test')
         ),
         body: Center(
           child: Column(
@@ -61,17 +62,17 @@ class MyAppState extends State<MyApp> {
             children: [
               Text('$result'),
               ElevatedButton(
-                child: Text('Decode'),
-                onPressed: onPressDecode
+                onPressed: onPressDecode,
+                child: Text('Decode')
               ),
               ElevatedButton(
-                child: Text('Encode'),
-                onPressed: onPressEncode
+                onPressed: onPressEncode,
+                child: Text('Encode')
               )
-            ],
-          ),
-        ),
-      ),
+            ]
+          )
+        )
+      )
     );
   }
 }

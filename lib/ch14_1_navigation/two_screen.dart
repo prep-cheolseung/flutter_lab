@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'user.dart';
 
 class TwoScreen extends StatelessWidget {
@@ -9,7 +10,7 @@ class TwoScreen extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Two Screen'),
+          title: Text('Two Screen')
         ),
         body: Container(
           color: Colors.green,
@@ -22,7 +23,7 @@ class TwoScreen extends StatelessWidget {
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 30
-                  ),
+                  )
                 ),
                 Text(
                   'Send Data : ${args["arg1"]}, ${args["arg2"]}, ${(args["arg3"] as User).name}'
@@ -31,19 +32,19 @@ class TwoScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.pushNamed(context, '/three');
                   },
-                  child: Text('Go Three'),
+                  child: Text('Go Three')
                 ),
                 ElevatedButton(
                   onPressed: () {
                     Navigator.pop(context, User('Kim', 'Busan'));
                   },
-                  child: Text('Pop'),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
+                  child: Text('Pop')
+                )
+              ]
+            )
+          )
+        )
+      )
     );
   }
 }

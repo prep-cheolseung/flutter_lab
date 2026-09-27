@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         ),
         home: CupertinoPageScaffold(
           navigationBar: CupertinoNavigationBar(
-            middle: Text('Cupertino Title'),
+            middle: Text('Cupertino Title')
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -26,32 +26,32 @@ class MyApp extends StatelessWidget {
                 onPressed: () {}
               ),
               Center(
-                child: Text('Hello Flutter'),
+                child: Text('Hello Flutter')
               )
-            ],
+            ]
           )
-        ),
+        )
       );
     } else if (Platform.isAndroid) {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
           appBar: AppBar(
-            title: Text('Material Title'),
+            title: Text('Material Title')
           ),
           body: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               ElevatedButton(
-                child: Text('Click'),
-                onPressed: () {}
+                onPressed: () {},
+                child: Text('Click')
               ),
               Center(
-                child: Text('Hello Flutter'),
+                child: Text('Hello Flutter')
               )
-            ],
+            ]
           )
-        ),
+        )
       );
     } else {
       return Text(
@@ -59,7 +59,7 @@ class MyApp extends StatelessWidget {
         style: TextStyle(
           fontSize: 25,
           fontWeight: FontWeight.bold
-        ),
+        )
       );
     }
   }

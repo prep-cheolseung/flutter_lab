@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Provider test')
         ),
         body: Provider<int>(
           create: (context) {
@@ -23,9 +23,9 @@ class MyApp extends StatelessWidget {
             }
             return sum;
           },
-          child: SubWidget(),
-        ),
-      ),
+          child: SubWidget()
+        )
+      )
     );
   }
 }
@@ -47,7 +47,7 @@ class SubWidget extends StatelessWidget {
                 color: Colors.white,
                 fontSize: 20,
                 fontWeight: FontWeight.bold
-              ),
+              )
             ),
             Text(
               'Provider Data : ${data}',
@@ -55,11 +55,11 @@ class SubWidget extends StatelessWidget {
                 color: Colors.white,
                 fontSize: 20,
                 fontWeight: FontWeight.bold
-              ),
+              )
             )
-          ],
-        ),
-      ),
+          ]
+        )
+      )
     );
   }
 }

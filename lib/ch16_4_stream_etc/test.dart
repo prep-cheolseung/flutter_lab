@@ -58,7 +58,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Stream, Etc test')
         ),
         body: Center(
           child: Column(
@@ -76,10 +76,10 @@ class MyApp extends StatelessWidget {
                 onPressed: transformerTest,
                 child: Text('Transformer')
               )
-            ],
-          ),
-        ),
-      ),
+            ]
+          )
+        )
+      )
     );
   }
 }

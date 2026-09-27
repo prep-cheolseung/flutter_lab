@@ -11,10 +11,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Form test')
         ),
         body: TestScreen()
-      ),
+      )
     );
   }
 }
@@ -34,52 +34,52 @@ class MyFormState extends State<TestScreen> {
     // TODO: implement build
     return Column(
       children: [
-        Text('Form Test'),
+        Text('Form test'),
         Form(
           key: _formKey,
           child: Column(
             children: [
               TextFormField(
                 decoration: InputDecoration(
-                  labelText: 'First Name'
+                  labelText: 'First name'
                 ),
                 validator: (value) {
                   if (value?.isEmpty ?? false) {
-                    return 'Please enter first name.';
+                    return 'Please enter first name';
                   }
                   return null;
                 },
                 onSaved: (String? value) {
                   firstName = value;
-                },
+                }
               ),
               TextFormField(
                 decoration: InputDecoration(
-                  labelText: 'Last Name'
+                  labelText: 'Last name'
                 ),
                 validator: (value) {
                   if (value?.isEmpty ?? false) {
-                    return 'Please enter last name.';
+                    return 'Please enter last name';
                   }
                   return null;
                 },
                 onSaved: (String? value) {
                   lastName = value;
-                },
-              ),
-            ],
-          ),
+                }
+              )
+            ]
+          )
         ),
         ElevatedButton(
           onPressed: () {
             if (_formKey.currentState?.validate() ?? false) {
               _formKey.currentState?.save();
-              print('First Name : $firstName, Last Name : $lastName');
+              print('First name : $firstName, Last name : $lastName');
             }
           },
           child: Text('Submit')
-        ),
-      ],
+        )
+      ]
     );
   }
 }

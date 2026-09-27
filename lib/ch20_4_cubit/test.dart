@@ -20,13 +20,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Cubit test')
         ),
         body: BlocProvider(
           create: (_) => CounterCubit(),
-          child: MyWidget(),
-        ),
-      ),
+          child: MyWidget()
+        )
+      )
     );
   }
 }
@@ -50,7 +50,7 @@ class MyWidget extends StatelessWidget {
                     color: Colors.white,
                     fontSize: 20,
                     fontWeight: FontWeight.bold
-                  ),
+                  )
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -64,9 +64,9 @@ class MyWidget extends StatelessWidget {
                   },
                   child: Text('Decrement')
                 )
-              ],
-            ),
-          ),
+              ]
+            )
+          )
         );
       }
     );

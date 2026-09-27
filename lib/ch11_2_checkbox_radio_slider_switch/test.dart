@@ -11,10 +11,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Checkbox, Radio, Slider, Switch test')
         ),
         body: TestScreen()
-      ),
+      )
     );
   }
 }
@@ -47,36 +47,36 @@ class TextState extends State<TestScreen> {
               }
             ),
             Text('Checkbox value is $isChecked')
-          ],
+          ]
         ),
         Text('Radio Test'),
         Row(
           children: [
             Radio(
-              value: "Andriod",
+              value: "Android",
               groupValue: selectPlatform,
               onChanged: (String? value) {
                 setState(() {
                   selectPlatform = value;
                 });
-              },
+              }
             ),
             Text('Android')
-          ],
+          ]
         ),
         Row(
           children: [
             Radio(
-              value: "IOS",
+              value: "iOS",
               groupValue: selectPlatform,
               onChanged: (String? value) {
                 setState(() {
                   selectPlatform = value;
                 });
-              },
+              }
             ),
-            Text('IOS')
-          ],
+            Text('iOS')
+          ]
         ),
         Text('Select platform is $selectPlatform'),
         Text('Slider Test'),
@@ -101,7 +101,7 @@ class TextState extends State<TestScreen> {
           }
         ),
         Text('Select value is $switchValue')
-      ],
+      ]
     );
   }
 }

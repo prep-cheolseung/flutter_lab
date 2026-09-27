@@ -86,7 +86,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Provider, Builder test')
         ),
         body: MultiBlocProvider(
           providers: [
@@ -97,9 +97,9 @@ class MyApp extends StatelessWidget {
               create: (context) => UserBloc()
             )
           ],
-          child: MyWidget(),
-        ),
-      ),
+          child: MyWidget()
+        )
+      )
     );
   }
 }
@@ -107,8 +107,10 @@ class MyApp extends StatelessWidget {
 class MyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // TODO: implement build
     final BlocCounter counterBloc = BlocProvider.of<BlocCounter>(context);
     final UserBloc userBloc = BlocProvider.of<UserBloc>(context);
+    
     return MultiBlocListener(
       listeners: [
         BlocListener<BlocCounter, int>(
@@ -119,19 +121,19 @@ class MyWidget extends StatelessWidget {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text('$state'),
-                backgroundColor: Colors.red,
-              ),
+                backgroundColor: Colors.red
+              )
             );
-          },
+          }
         ),
         BlocListener<UserBloc, User?>(listener: (context, user) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               content: Text('${user!.name}'),
-              backgroundColor: Colors.blue,
-            ),
+              backgroundColor: Colors.blue
+            )
           );
-        }),
+        })
       ],
       child: Container(
         color: Colors.deepOrange,
@@ -153,7 +155,7 @@ class MyWidget extends StatelessWidget {
                           color: Colors.white,
                           fontSize: 20,
                           fontWeight: FontWeight.bold
-                        ),
+                        )
                       ),
                       Text(
                         'Bloc : $count',
@@ -161,7 +163,7 @@ class MyWidget extends StatelessWidget {
                           color: Colors.white,
                           fontSize: 20,
                           fontWeight: FontWeight.bold
-                        ),
+                        )
                       ),
                       ElevatedButton(
                         onPressed: () {
@@ -190,7 +192,7 @@ class MyWidget extends StatelessWidget {
                           color: Colors.white,
                           fontSize: 20,
                           fontWeight: FontWeight.bold
-                        ),
+                        )
                       ),
                       ElevatedButton(
                         onPressed: () {
@@ -200,18 +202,18 @@ class MyWidget extends StatelessWidget {
                       ),
                       ElevatedButton(
                         onPressed: () {
-                          userBloc.add(CreateUserEvent(User('Kim', 'Busan')));
+                          userBloc.add(UpdateUserEvent(User('Kim', 'Busan')));
                         },
                         child: Text('Update')
                       )
-                    ],
+                    ]
                   );
-                },
-              ),
-            ],
-          ),
-        ),
-      ),
+                }
+              )
+            ]
+          )
+        )
+      )
     );
   }
 }

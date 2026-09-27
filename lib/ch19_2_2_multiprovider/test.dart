@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Multiprovider test')
         ),
         body: MultiProvider(
           providers: [
@@ -31,9 +31,9 @@ class MyApp extends StatelessWidget {
             Provider<String>.value(value: "Hello"),
             ChangeNotifierProvider<Counter>.value(value: Counter())
           ],
-          child: SubWidget(),
+          child: SubWidget()
         )
-      ),
+      )
     );
   }
 }
@@ -57,7 +57,7 @@ class SubWidget extends StatelessWidget {
                 color: Colors.white,
                 fontSize: 20,
                 fontWeight: FontWeight.bold
-              ),
+              )
             ),
             Text(
               'Int data : $int_data',
@@ -65,7 +65,7 @@ class SubWidget extends StatelessWidget {
                 color: Colors.white,
                 fontSize: 20,
                 fontWeight: FontWeight.bold
-              ),
+              )
             ),
             Text(
               'String data : $string_data',
@@ -73,7 +73,7 @@ class SubWidget extends StatelessWidget {
                 color: Colors.white,
                 fontSize: 20,
                 fontWeight: FontWeight.bold
-              ),
+              )
             ),
             Text(
               'Counter data : ${counter.count}',
@@ -81,7 +81,7 @@ class SubWidget extends StatelessWidget {
                 color: Colors.white,
                 fontSize: 20,
                 fontWeight: FontWeight.bold
-              ),
+              )
             ),
             ElevatedButton(
               onPressed: () {
@@ -89,9 +89,9 @@ class SubWidget extends StatelessWidget {
               },
               child: Text('Increment')
             )
-          ],
-        ),
-      ),
+          ]
+        )
+      )
     );
   }
 }

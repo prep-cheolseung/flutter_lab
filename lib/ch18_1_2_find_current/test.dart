@@ -42,13 +42,13 @@ class ParentWidgetState extends State<ParentWidget> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Find, Current test')
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              child: Text('I am Parent, child count : $childCount'),
+              child: Text('I am Parent, child count : $childCount')
             ),
             ElevatedButton(
               onPressed: getChildData,
@@ -57,9 +57,9 @@ class ParentWidgetState extends State<ParentWidget> {
             ChildWidget(key: childKey),
             IconWidget(),
             ContentWidget()
-          ],
-        ),
-      ),
+          ]
+        )
+      )
     );
   }
 }
@@ -92,8 +92,8 @@ class ChildWidgetState extends State<ChildWidget> {
             });
           },
           child: Text('Increment')
-        ),
-      ],
+        )
+      ]
     );
   }
 }
@@ -111,9 +111,9 @@ class IconWidget extends StatelessWidget {
               ? Icon(Icons.favorite)
               : Icon(Icons.favorite_border)),
           color: Colors.red,
-          iconSize: 200,
-        ),
-      ),
+          iconSize: 200
+        )
+      )
     );
   }
 }
@@ -129,8 +129,8 @@ class ContentWidget extends StatelessWidget {
         style: TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.bold
-        ),
-      ),
+        )
+      )
     );
   }
 }

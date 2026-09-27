@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
     List<Widget> widgets = [];
     for (var i = 0; i < 100; i++) {
       widgets.add(ListTile(
-        title: Text('Hello World Item $i'),
+        title: Text('Hello Flutter Item $i')
       ));
     }
     return widgets;
@@ -24,11 +24,11 @@ class MyApp extends StatelessWidget {
         body: SafeArea(
           child: SingleChildScrollView(
             child: Column(
-              children: getWidgets(),
-            ),
+              children: getWidgets()
+            )
           )
-        ),
-      ),
+        )
+      )
     );
   }
 }

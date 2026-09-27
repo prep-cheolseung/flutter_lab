@@ -7,7 +7,7 @@ class FourScreen extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Four Screen'),
+          title: Text('Four Screen')
         ),
         body: Container(
           color: Colors.cyan,
@@ -20,19 +20,19 @@ class FourScreen extends StatelessWidget {
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 30
-                  ),
+                  )
                 ),
                 ElevatedButton(
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  child: Text('Pop'),
+                  child: Text('Pop')
                 )
-              ],
-            ),
-          ),
-        ),
-      ),
+              ]
+            )
+          )
+        )
+      )
     );
   }
 }

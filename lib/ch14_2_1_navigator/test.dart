@@ -12,11 +12,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
-      title: 'Test',
+      title: 'Navigator test',
       home: Navigator(pages: [
         MaterialPage(child: OneScreen()),
-        if (_isDeepLink) MaterialPage(child: TwoScreen())
-      ], onPopPage: (route, result) => route.didPop(result)),
+        if (_isDeepLink) MaterialPage(
+          child: TwoScreen()
+        )
+      ],
+      onPopPage: (route, result) => route.didPop(result))
     );
   }
 }
@@ -27,7 +30,7 @@ class OneScreen extends StatelessWidget {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text('One Screen'),
+        title: Text('One Screen')
       ),
       body: Container(
         color: Colors.red,
@@ -40,12 +43,12 @@ class OneScreen extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 30
-                ),
+                )
               )
-            ],
-          ),
-        ),
-      ),
+            ]
+          )
+        )
+      )
     );
   }
 }
@@ -56,7 +59,7 @@ class TwoScreen extends StatelessWidget {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text('Two Screen'),
+        title: Text('Two Screen')
       ),
       body: Container(
         color: Colors.cyan,
@@ -69,7 +72,7 @@ class TwoScreen extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 30
-                ),
+                )
               ),
               ElevatedButton(
                 onPressed: () {
@@ -77,10 +80,10 @@ class TwoScreen extends StatelessWidget {
                 },
                 child: Text('Pop')
               )
-            ],
-          ),
-        ),
-      ),
+            ]
+          )
+        )
+      )
     );
   }
 }

@@ -28,15 +28,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Selector test')
         ),
         body: MultiProvider(
           providers: [
             ChangeNotifierProvider<MyDataModel>.value(value: MyDataModel())
           ],
-          child: HomeWidget(),
-        ),
-      ),
+          child: HomeWidget()
+        )
+      )
     );
   }
 }
@@ -63,9 +63,9 @@ class HomeWidget extends StatelessWidget {
                         color: Colors.white,
                         fontSize: 20,
                         fontWeight: FontWeight.bold
-                      ),
-                    ),
-                  ),
+                      )
+                    )
+                  )
                 );
               }
             ),
@@ -81,9 +81,9 @@ class HomeWidget extends StatelessWidget {
                         color: Colors.white,
                         fontSize: 20,
                         fontWeight: FontWeight.bold
-                      ),
-                    ),
-                  ),
+                      )
+                    )
+                  )
                 );
               },
               selector: (context, model) => model.data2
@@ -104,11 +104,11 @@ class HomeWidget extends StatelessWidget {
                   },
                   child: Text('Model Data2 Change')
                 )
-              ],
+              ]
             )
-          ],
-        ),
-      ),
+          ]
+        )
+      )
     );
   }
 }

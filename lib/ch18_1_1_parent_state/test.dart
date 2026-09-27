@@ -32,7 +32,7 @@ class ParentWidgetState extends State<ParentWidget> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Parent, State test'),
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -42,9 +42,9 @@ class ParentWidgetState extends State<ParentWidget> {
               onChanged: toggleFavorite
             ),
             ContentWidget(favoriteCount: favoriteCount)
-          ],
-        ),
-      ),
+          ]
+        )
+      )
     );
   }
 }
@@ -67,8 +67,8 @@ class IconWidget extends StatelessWidget {
         onPressed: _handleTap,
         icon: (favorited ? Icon(Icons.favorite) : Icon(Icons.favorite_border)),
         iconSize: 200,
-        color: Colors.red,
-      ),
+        color: Colors.red
+      )
     );
   }
 }
@@ -90,10 +90,10 @@ class ContentWidget extends StatelessWidget {
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold
-            ),
-          ),
+            )
+          )
         )
-      ],
+      ]
     );
   }
 }

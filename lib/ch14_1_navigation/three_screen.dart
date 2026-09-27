@@ -7,7 +7,7 @@ class ThreeScreen extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Three Screen'),
+          title: Text('Three Screen')
         ),
         body: Container(
           color: Colors.yellow,
@@ -20,25 +20,25 @@ class ThreeScreen extends StatelessWidget {
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 30
-                  ),
+                  )
                 ),
                 ElevatedButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/four');
                   },
-                  child: Text('Go Four'),
+                  child: Text('Go Four')
                 ),
                 ElevatedButton(
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  child: Text('Pop'),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
+                  child: Text('Pop')
+                )
+              ]
+            )
+          )
+        )
+      )
     );
   }
 }

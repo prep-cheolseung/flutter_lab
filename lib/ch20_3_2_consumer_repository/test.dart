@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MyRepository {
   someFun() {
-    print('.......... someFun');
+    print('.......... someFun.....');
   }
 }
 
@@ -38,16 +38,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Consumer, Repository test')
         ),
         body: RepositoryProvider(
           create: (context) => MyRepository(),
           child: BlocProvider<BlocCounter>(
             create: (context) => BlocCounter(),
-            child: MyWidget(),
-          ),
-        ),
-      ),
+            child: MyWidget()
+          )
+        )
+      )
     );
   }
 }
@@ -58,12 +58,13 @@ class MyWidget extends StatelessWidget {
     // TODO: implement build
     final BlocCounter counterBloc = BlocProvider.of<BlocCounter>(context);
     final MyRepository repository = RepositoryProvider.of<MyRepository>(context);
+
     return BlocConsumer<BlocCounter, int>(listenWhen: (previous, current) {
       return true;
     }, listener: (context, state) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('$state'),
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.blue
         )
       );
     }, buildWhen: (previous, current) {
@@ -82,7 +83,7 @@ class MyWidget extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 20,
                   fontWeight: FontWeight.bold
-                ),
+                )
               ),
               ElevatedButton(
                 onPressed: () {
@@ -98,9 +99,9 @@ class MyWidget extends StatelessWidget {
                 },
                 child: Text('Decrement')
               )
-            ],
-          ),
-        ),
+            ]
+          )
+        )
       );
     });
   }

@@ -12,10 +12,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('Dialog test')
         ),
-        body: TestScreen(),
-      ),
+        body: TestScreen()
+      )
     );
   }
 }
@@ -35,12 +35,12 @@ class TextState extends State<TestScreen> {
       barrierDismissible: false,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Dialog Title'),
+          title: Text("Dialog Title"),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               TextField(
-                decoration: InputDecoration(border:  OutlineInputBorder()),
+                decoration: InputDecoration(border: OutlineInputBorder())
               ),
               Row(
                 children: [
@@ -49,18 +49,18 @@ class TextState extends State<TestScreen> {
                     onChanged: (value) {}
                   ),
                   Text('Consent to receipt')
-                ],
+                ]
               )
-            ],
+            ]
           ),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text("OK"),
-            ),
-          ],
+              child: Text("OK")
+            )
+          ]
         );
       }
     );
@@ -79,16 +79,16 @@ class TextState extends State<TestScreen> {
               title: Text('Add'),
               onTap: () {
                 Navigator.of(context).pop();
-              },
+              }
             ),
             ListTile(
               leading: Icon(Icons.remove),
               title: Text('Remove'),
               onTap: () {
                 Navigator.of(context).pop();
-              },
+              }
             )
-          ],
+          ]
         );
       }
     );
@@ -104,21 +104,21 @@ class TextState extends State<TestScreen> {
             mainAxisSize: MainAxisSize.min,
             children: [
               ListTile(
-              leading: Icon(Icons.add),
-              title: Text('Add'),
-              onTap: () {
-                Navigator.of(context).pop();
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.remove),
-              title: Text('Remove'),
-              onTap: () {
-                Navigator.of(context).pop();
-              },
-            )
-            ],
-          ),
+                leading: Icon(Icons.add),
+                title: Text('Add'),
+                onTap: () {
+                  Navigator.of(context).pop();
+                }
+              ),
+              ListTile(
+                leading: Icon(Icons.remove),
+                title: Text('Remove'),
+                onTap: () {
+                  Navigator.of(context).pop();
+                }
+              )
+            ]
+          )
         );
       }
     );
@@ -156,14 +156,14 @@ class TextState extends State<TestScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           ElevatedButton(onPressed: _dialog, child: Text('Dialog')),
-          ElevatedButton(onPressed: _bottomSheet, child: Text('Bottom Sheet')),
-          ElevatedButton(onPressed: _modalBottomSheet, child: Text('Modal Bottom Sheet')),
-          ElevatedButton(onPressed: datePicker, child: Text('Date Picker')),
-          Text('Date : ${DateFormat('yyyy-MM-DD').format(dateValue)}'),
-          ElevatedButton(onPressed: timePicker, child: Text('Time Picker')),
-          Text('Time : ${timeValue.hour}:${timeValue.minute}'),
-        ],
-      ),
+          ElevatedButton(onPressed: _bottomSheet, child: Text('BottomSheet')),
+          ElevatedButton(onPressed: _modalBottomSheet, child: Text('ModalBottomSheet')),
+          ElevatedButton(onPressed: datePicker, child: Text('DatePicker')),
+          Text('Date : ${DateFormat('yyyy-mm-dd').format(dateValue)}'),
+          ElevatedButton(onPressed: timePicker, child: Text('TimePicker')),
+          Text('Time : ${timeValue.hour}:${timeValue.minute}')
+        ]
+      )
     );
   }
 }
