@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: Colors.blue
       ),
-      home: NativeCallWidget(),
+      home: NativeCallWidget()
     );
   }
 }
@@ -45,9 +45,9 @@ class NativeCallWidgetState extends State<NativeCallWidget> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text("Event Channel"),
+        title: Text("Event Channel")
       ),
-      body:  Container(
+      body: Container(
         color: Colors.deepPurpleAccent,
         child: Center(
           child: Column(
@@ -59,7 +59,7 @@ class NativeCallWidgetState extends State<NativeCallWidget> {
                   color: Colors.white,
                   fontSize: 20,
                   fontWeight: FontWeight.bold
-                ),
+                )
               ),
               ElevatedButton(
                 onPressed: () {
@@ -67,10 +67,10 @@ class NativeCallWidgetState extends State<NativeCallWidget> {
                 },
                 child: Text('Native call')
               )
-            ],
-          ),
-        ),
-      ),
+            ]
+          )
+        )
+      )
     );
   }
 }

@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: Colors.blue
       ),
-      home: NativeCallWidget(),
+      home: NativeCallWidget()
     );
   }
 }
@@ -49,26 +49,40 @@ class NativeCallWidgetState extends State<NativeCallWidget> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text("Message Channel"),
+        title: Text("Message Channel")
       ),
-      body:  Container(
+      body: Container(
         color: Colors.deepPurpleAccent,
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text('resultMessage : $resultMessage'),
-              Text('receiveMessage : $receiveMessage'),
+              Text(
+                'resultMessage : $resultMessage',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold
+                )
+              ),
+              Text(
+                'receiveMessage : $receiveMessage',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold
+                )
+              ),
               ElevatedButton(
                 onPressed: () {
                   nativeCall();
                 },
                 child: Text('Native call')
               )
-            ],
-          ),
-        ),
-      ),
+            ]
+          )
+        )
+      )
     );
   }
 }

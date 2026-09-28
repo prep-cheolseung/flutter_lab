@@ -7,11 +7,13 @@ class CounterController extends GetxController {
 
   @override
   onInit() {
+    // TODO: implement onInit
     super.onInit();
   }
 
   @override
   onClose() {
+    // TODO: implement onClose
     super.onClose();
   }
 
@@ -38,15 +40,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('GetX test')
         ),
         body: GetBuilder(
           init: CounterController(),
           builder: (_) {
             return MyWidget();
           }
-        ),
-      ),
+        )
+      )
     );
   }
 }
@@ -59,7 +61,7 @@ class MyWidget extends StatelessWidget {
       builder: (controller) {
         return Container(
           color: Colors.deepOrange,
-          child:  Center(
+          child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -69,7 +71,7 @@ class MyWidget extends StatelessWidget {
                     color: Colors.white,
                     fontSize: 20,
                     fontWeight: FontWeight.bold
-                  ),
+                  )
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -83,9 +85,9 @@ class MyWidget extends StatelessWidget {
                   },
                   child: Text('Decrement')
                 )
-              ],
-            ),
-          ),
+              ]
+            )
+          )
         );
       }
     );

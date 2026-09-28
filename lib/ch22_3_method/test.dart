@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: Colors.blue
       ),
-      home: NativeCallWidget(),
+      home: NativeCallWidget()
     );
   }
 }
@@ -36,8 +36,9 @@ class NativeCallWidgetState extends State<NativeCallWidget> {
     try {
       var details = {'Username': 'Lee', 'Password': '0123456789'};
       final Map result = await channel.invokeMethod("oneMethod", details);
+      
       setState(() {
-        resultMessage = "${result["one"]}, ${result["two"]}";
+        resultMessage = "${result["One"]}, ${result["Two"]}";
       });
       channel.setMethodCallHandler((call) async {
         switch (call.method) {
@@ -49,7 +50,7 @@ class NativeCallWidgetState extends State<NativeCallWidget> {
         }
       });
     } on PlatformException catch (e) {
-      print("Failed : '${e.message}");
+      print("Failed : '${e.message}'");
     }
   }
 
@@ -58,9 +59,9 @@ class NativeCallWidgetState extends State<NativeCallWidget> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text("Message Channel"),
+        title: Text("Method Channel")
       ),
-      body:  Container(
+      body: Container(
         color: Colors.deepPurpleAccent,
         child: Center(
           child: Column(
@@ -72,7 +73,7 @@ class NativeCallWidgetState extends State<NativeCallWidget> {
                   color: Colors.white,
                   fontSize: 20,
                   fontWeight: FontWeight.bold
-                ),
+                )
               ),
               Text(
                 'receiveMessage : $receiveMessage',
@@ -80,7 +81,7 @@ class NativeCallWidgetState extends State<NativeCallWidget> {
                   color: Colors.white,
                   fontSize: 20,
                   fontWeight: FontWeight.bold
-                ),
+                )
               ),
               ElevatedButton(
                 onPressed: () {
@@ -88,10 +89,10 @@ class NativeCallWidgetState extends State<NativeCallWidget> {
                 },
                 child: Text('Native call')
               )
-            ],
-          ),
-        ),
-      ),
+            ]
+          )
+        )
+      )
     );
   }
 }

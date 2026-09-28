@@ -14,29 +14,32 @@ class CounterController extends GetxController {
 
   @override
   onInit() {
+    // TODO: implement onInit
     super.onInit();
+
     ever(
       count,
-      (value) => print('Ever ; $value')
+      (value) => print('Ever : $value')
     );
     once(
       count,
-      (value) => print('Once ; $value')
+      (value) => print('Once : $value')
     );
     debounce(
       count,
-      (value) => print('Debounce ; $value'),
+      (value) => print('Debounce : $value'),
       time: Duration(seconds: 1)
     );
     interval(
       count,
-      (value) => print('Interval ; $value'),
+      (value) => print('Interval : $value'),
       time: Duration(seconds: 1)
     );
   }
 
   @override
   onClose() {
+    // TODO: implement onClose
     super.onClose();
   }
 }
@@ -54,10 +57,10 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Test'),
+          title: Text('RX test')
         ),
-        body: MyWidget(),
-      ),
+        body: MyWidget()
+      )
     );
   }
 }
@@ -74,20 +77,23 @@ class MyWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(
-                'GetX : ${controller.count}, ${controller.isChecked.value}, ${controller.title.value}',
+                'GetX : ${controller.count},'
+                      ' ${controller.isChecked.value},'
+                      ' ${controller.title.value}',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,
                   fontWeight: FontWeight.bold
-                ),
+                )
               ),
               Text(
-                'GetX : ${controller.user.value.name}, ${controller.user.value.age}',
+                'GetX : ${controller.user.value.name},'
+                      ' ${controller.user.value.age}',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,
                   fontWeight: FontWeight.bold
-                ),
+                )
               ),
               ElevatedButton(
                 onPressed: () {
@@ -107,9 +113,9 @@ class MyWidget extends StatelessWidget {
                 },
                 child: Text('Change')
               )
-            ],
-          ),
-        ),
+            ]
+          )
+        )
       )
     );
   }
