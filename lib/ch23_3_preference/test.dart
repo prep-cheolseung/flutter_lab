@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: Colors.blue
       ),
-      home: NativePluginWidget(),
+      home: NativePluginWidget()
     );
   }
 }
@@ -54,7 +54,7 @@ class NativePluginWidgetState extends State<NativePluginWidget> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text('Test'),
+        title: Text('Shared preferences test')
       ),
       body: Container(
         color: Colors.yellow,
@@ -84,10 +84,10 @@ class NativePluginWidgetState extends State<NativePluginWidget> {
                 onPressed: _save,
                 child: Text('Save')
               )
-            ],
-          ),
-        ),
-      ),
+            ]
+          )
+        )
+      )
     );
   }
 }

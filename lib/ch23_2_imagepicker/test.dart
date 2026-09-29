@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: Colors.blue
       ),
-      home: NativePluginWidget(),
+      home: NativePluginWidget()
     );
   }
 }
@@ -50,7 +50,7 @@ class NativePluginWidgetState extends State<NativePluginWidget> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text('Test'),
+        title: Text('Image picker test')
       ),
       body: Container(
         color: Colors.indigo,
@@ -68,7 +68,7 @@ class NativePluginWidgetState extends State<NativePluginWidget> {
                     'No image selected',
                     style: TextStyle(
                       color: Colors.white
-                    ),
+                    )
                   )
                   : CircleAvatar(
                     backgroundImage: FileImage(File(_image!.path)),
@@ -79,10 +79,10 @@ class NativePluginWidgetState extends State<NativePluginWidget> {
                 onPressed: getCameraImage,
                 child: Text('Camera')
               )
-            ],
-          ),
-        ),
-      ),
+            ]
+          )
+        )
+      )
     );
   }
 }

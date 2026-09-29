@@ -237,7 +237,7 @@ class AuthWidgetState extends State<AuthWidget> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text("Test")
+        title: Text("Auth test")
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

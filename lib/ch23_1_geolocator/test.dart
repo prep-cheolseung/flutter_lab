@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: Colors.blue
       ),
-      home: NativePluginWidget(),
+      home: NativePluginWidget()
     );
   }
 }
@@ -55,7 +55,7 @@ class NativePluginWidgetState extends State<NativePluginWidget> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text("Geolocator"),
+        title: Text("Geolocator test")
       ),
       body: Container(
         color: Colors.indigo,
@@ -69,7 +69,7 @@ class NativePluginWidgetState extends State<NativePluginWidget> {
                   color: Colors.white,
                   fontSize: 20,
                   fontWeight: FontWeight.bold
-                ),
+                )
               ),
               Text(
                 'Latitude : ${latitude}',
@@ -77,7 +77,7 @@ class NativePluginWidgetState extends State<NativePluginWidget> {
                   color: Colors.white,
                   fontSize: 20,
                   fontWeight: FontWeight.bold
-                ),
+                )
               ),
               Text(
                 'Longitude : ${longitude}',
@@ -85,12 +85,12 @@ class NativePluginWidgetState extends State<NativePluginWidget> {
                   color: Colors.white,
                   fontSize: 20,
                   fontWeight: FontWeight.bold
-                ),
+                )
               )
-            ],
-          ),
-        ),
-      ),
+            ]
+          )
+        )
+      )
     );
   }
 }

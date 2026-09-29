@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: Colors.blue
       ),
-      home: NativePluginWidget(),
+      home: NativePluginWidget()
     );
   }
 }
@@ -26,7 +26,9 @@ class User {
   String? address;
 
   Map<String, Object?> toMap() {
-    var map = <String, Object?> {"name": name, "address": address};
+    var map = <String, Object?> {
+      "name": name, "address": address
+    };
     if (id != null) {
       map["id"] = id;
     }
@@ -86,7 +88,7 @@ class NativePluginWidgetState extends State<NativePluginWidget> {
   }
 
   delete() async {
-    await db.delete('User', where: 'id=?', whereArgs: [lastId]);
+    await db.delete("User", where: 'id=?', whereArgs: [lastId]);
     lastId--;
   }
 
@@ -112,7 +114,7 @@ class NativePluginWidgetState extends State<NativePluginWidget> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text('Test'),
+        title: Text('SQF lite test')
       ),
       body: Container(
         color: Colors.indigo,
@@ -135,11 +137,11 @@ class NativePluginWidgetState extends State<NativePluginWidget> {
               ElevatedButton(
                 onPressed: query,
                 child: Text('Query')
-              ),
-            ],
-          ),
-        ),
-      ),
+              )
+            ]
+          )
+        )
+      )
     );
   }
 }
