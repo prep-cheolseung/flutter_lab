@@ -8,12 +8,12 @@ import 'package:fluttertoast/fluttertoast.dart';
 showToast(String msg) {
   Fluttertoast.showToast(
     msg: msg,
-    toastLength: Toast.LENGTH_SHORT,
-    gravity: ToastGravity.CENTER,
-    timeInSecForIosWeb: 1,
     backgroundColor: Colors.red,
+    fontSize: 16,
+    gravity: ToastGravity.CENTER,
     textColor: Colors.white,
-    fontSize: 16
+    timeInSecForIosWeb: 1,
+    toastLength: Toast.LENGTH_SHORT
   );
 }
 
@@ -74,7 +74,7 @@ class AuthWidgetState extends State<AuthWidget> {
       } else if (e.code == 'wrong-password') {
         showToast('Wrong password');
       } else {
-        showToast('Other error');
+        showToast('Error');
         print(e.code);
       }
     }
@@ -106,7 +106,7 @@ class AuthWidgetState extends State<AuthWidget> {
       } else if (e.code == 'email-already-in-use') {
         showToast('E-mail already in use');
       } else {
-        showToast('Other error');
+        showToast('Error');
         print(e.code);
       }
     } catch (e) {

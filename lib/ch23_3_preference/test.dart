@@ -63,9 +63,9 @@ class NativePluginWidgetState extends State<NativePluginWidget> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Slider(
-                value: sliderValue,
                 min: 0,
                 max: 10,
+                value: sliderValue,
                 onChanged: (double value) {
                   setState(() {
                     sliderValue = value;

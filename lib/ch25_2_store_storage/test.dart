@@ -10,13 +10,13 @@ import 'package:intl/intl.dart';
 
 showToast(String msg) {
   Fluttertoast.showToast(
-      msg: msg,
-      toastLength: Toast.LENGTH_SHORT,
-      gravity: ToastGravity.CENTER,
-      timeInSecForIosWeb: 1,
-      backgroundColor: Colors.red,
-      textColor: Colors.white,
-      fontSize: 16
+    msg: msg,
+    backgroundColor: Colors.red,
+    fontSize: 16,
+    gravity: ToastGravity.CENTER,
+    textColor: Colors.white,
+    timeInSecForIosWeb: 1,
+    toastLength: Toast.LENGTH_SHORT
   );
 }
 
@@ -83,7 +83,7 @@ class ListScreenState extends State<ListScreen> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text('Test')
+        title: Text('Store, Storage test')
       ),
       body: StreamBuilder<QuerySnapshot<Content>>(
         stream: contentsRef.snapshots(),
@@ -176,8 +176,7 @@ class InputScreenState extends State<InputScreen> {
       return null;
     }
 
-    Reference ref
-      = FirebaseStorage.instance.ref().child('images/${_image?.name}');
+    Reference ref = FirebaseStorage.instance.ref().child('images/${_image?.name}');
 
     await ref.putFile(File(_image!.path));
     downloadurl = await ref.getDownloadURL();
@@ -213,11 +212,11 @@ class InputScreenState extends State<InputScreen> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text('Test'),
+        title: Text('Store, Storage test'),
         actions: <Widget>[
           IconButton(
-              onPressed: getGalleryImage,
-              icon: const Icon(Icons.photo_album)
+            onPressed: getGalleryImage,
+            icon: const Icon(Icons.photo_album)
           ),
           IconButton(
             onPressed: _save,
@@ -230,11 +229,11 @@ class InputScreenState extends State<InputScreen> {
           Visibility(
             child: isImageVisible
               ? Container(
-                height: 200,
-                child: Image.file(
-                  File(_image!.path)
+                  height: 200,
+                  child: Image.file(
+                    File(_image!.path)
+                  )
                 )
-              )
               : Container(),
             visible: isImageVisible
           ),
@@ -246,11 +245,11 @@ class InputScreenState extends State<InputScreen> {
               ),
               controller: controller,
               decoration: InputDecoration(
-                labelText: 'Data',
-                prefixIcon: Icon(Icons.input),
                 border: OutlineInputBorder(),
+                helperText: "데이터를 입력하세요.",
                 hintText: "Hint Text",
-                helperText: "데이터를 입력하세요."
+                labelText: 'Data',
+                prefixIcon: Icon(Icons.input)
               )
             )
           )
