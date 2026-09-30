@@ -83,7 +83,7 @@ class ListScreenState extends State<ListScreen> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text('Store, Storage test')
+        title: Text('Flutter Demo')
       ),
       body: StreamBuilder<QuerySnapshot<Content>>(
         stream: contentsRef.snapshots(),
