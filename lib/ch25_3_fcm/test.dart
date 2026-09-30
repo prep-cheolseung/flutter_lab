@@ -13,17 +13,17 @@ Future<void> cancelNotification() async {
 
 Future<void> requestPermissions() async {
   await notiPlugin
-      .resolvePlatformSpecificImplementation<IOSFlutterLocalNotificationsPlugin>()
-      ?.requestPermissions(
-    alert: true,
-    badge: true,
-    sound: true
-  );
+    .resolvePlatformSpecificImplementation<IOSFlutterLocalNotificationsPlugin>()
+    ?.requestPermissions(
+      alert: true,
+      badge: true,
+      sound: true
+    );
 
   // Android 13 이상 권한 요청 (추천)
   final bool? granted = await notiPlugin
-      .resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()
-      ?.requestNotificationsPermission();
+    .resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()
+    ?.requestNotificationsPermission();
 }
 
 Future<void> showNotification({
